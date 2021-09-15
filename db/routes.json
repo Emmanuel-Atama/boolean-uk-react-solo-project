@@ -1,0 +1,4 @@
+{
+  "/forms": "/forms?_expand=child",
+  "/forms/*": "/forms/$1?_expand=child"
+}
