@@ -1,13 +1,102 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Modern Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: rgb(214, 210, 210);
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* #root {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+
+  font-family: sans-serif;
+} */
+/* .center {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+} */
+.light-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 3px 9px rgba(0, 0, 0, 0.08);
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+.list-section {
+  height: 100vh;
+  padding: 2rem 1rem;
+
+  overflow-y: hidden;
+}
+.list-of-child-header h2 {
+  width: auto;
+  height: auto;
+  border: 4px solid black;
+  text-align: center;
+  padding: 2px;
+}
+.list-of-child {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 8px;
+}
+.list-of-child button {
+  width: auto;
+  height: auto;
+  background-color: rgb(187, 216, 142);
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-top: 12px;
+  border-radius: 50%;
 }
