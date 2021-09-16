@@ -52,6 +52,8 @@ button,
 textarea,
 select {
   font: inherit;
+  border-radius: 8px;
+  margin-right: 8px;
 }
 
 /* #root {
@@ -99,4 +101,15 @@ select {
   padding-right: 0px;
   margin-top: 12px;
   border-radius: 50%;
+}
+.form-stack > * + * {
+  margin-top: 0.5rem;
+}
+
+.form-stack > label {
+  display: block;
+}
+
+.form-stack > input {
+  width: auto;
 }

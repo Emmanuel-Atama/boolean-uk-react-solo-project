@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import LeftAside from "./components/LeftAside";
-import ListOfChildren from "./components/ListOfChildren";
-import RightAside from "./components/RightAside";
-import "./styles.css";
+import LeftAside from "./Components/LeftAside";
+import ListOfChildren from "./Components/ListOfChildren";
+import RightAside from "./Components/RightAside";
+import "./index.css";
 
 export default function App() {
   const [forms, setForms] = useState([]);
