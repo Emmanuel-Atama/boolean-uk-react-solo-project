@@ -72,7 +72,10 @@ select {
 }
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 0.5fr 2fr;
+}
+.right-aside {
+  margin-left: 16px;
 }
 .list-section {
   height: 100vh;
@@ -96,11 +99,10 @@ select {
 .list-of-child button {
   width: auto;
   height: auto;
-  background-color: rgb(187, 216, 142);
-  padding-left: 0px;
-  padding-right: 0px;
+  background-color: rgb(130, 175, 85);
   margin-top: 12px;
-  border-radius: 50%;
+  border-radius: 16px;
+  color: white;;
 }
 .form-stack > * + * {
   margin-top: 0.5rem;
@@ -112,4 +114,7 @@ select {
 
 .form-stack > input {
   width: auto;
+}
+.margin-top {
+  margin-top: 8px;
 }

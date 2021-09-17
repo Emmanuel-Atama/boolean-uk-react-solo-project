@@ -8,6 +8,7 @@ export default function App() {
   const [forms, setForms] = useState([]);
   const [children, setChildren] = useState([]);
 
+  console.log("Inside State; ", {forms, children})
   useEffect(() => {
     const url = "http://localhost:3030/forms";
     console.log("Inside Url: ", url);

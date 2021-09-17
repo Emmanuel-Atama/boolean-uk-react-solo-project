@@ -1,19 +1,23 @@
 import { useState } from "react";
+import CreateApplicationForm2 from "./CreateApplicationForm2";
 export default function CreateApplicationForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("")
+  const [houseNumber, setHouseNumber] = useState({})
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [postCode, setPostCode] = useState("");
-  const [phone, setPhone] = useState();
+  const [phoneNumber, setPhoneNumber] = useState(0);
 
-  console.log("Inside State: ", {
+  console.log("Inside CAF State: ", {
     firstName,
     lastName,
+    houseNumber,
     street,
     city,
     postCode,
-    phone
+    phoneNumber
   });
 
   
@@ -23,6 +27,12 @@ export default function CreateApplicationForm() {
 
   const handleLastName = (event) => {
     setLastName(event.target.value);
+  };
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handleHouseNumber = (event) => {
+    setHouseNumber(event.target.value);
   };
 
   const handleStreet = (event) => {
@@ -37,10 +47,15 @@ export default function CreateApplicationForm() {
     setPostCode(event.target.value);
   };
   const handlePhone = (event) => {
-    setPhone(event.target.value);
+    setPhoneNumber(event.target.value);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
   };
   return (
-    <form className="form-stack light-shadow center contact-form">
+    <>
+    <form onSubmit={handleSubmit} className="form-stack light-shadow center contact-form">
+
       <label htmlFor="first-name-input">First Name:</label>
       <input
         onChange={handleFirstName}
@@ -57,6 +72,22 @@ export default function CreateApplicationForm() {
         type="text"
         value={lastName}
       />
+          <label for="email">Email:</label>
+      <input
+        onChange={handleEmail}
+        value={email}
+        type="email"
+        id="email"
+        name="email"
+        />
+      <label for="phone">House Number:</label>
+      <input
+        onChange={handleHouseNumber}
+        value={houseNumber}
+        type="number"
+        id="house-number"
+        name="house-number"
+        />
       <label htmlFor="street-input">Street:</label>
       <input
         onChange={handleStreet}
@@ -84,7 +115,7 @@ export default function CreateApplicationForm() {
       <label for="phone">Enter your phone number:</label>
       <input
         onChange={handlePhone}
-        value={phone}
+        value={phoneNumber}
         type="tel"
         id="phone"
         name="phone"
@@ -98,5 +129,7 @@ export default function CreateApplicationForm() {
         <button>Cancel Application</button>
       </div>
     </form>
+    <CreateApplicationForm2 />
+    </>
   );
 }
