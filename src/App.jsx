@@ -5,25 +5,25 @@ import RightAside from "./Components/RightAside";
 import "./index.css";
 
 export default function App() {
-  const [forms, setForms] = useState([]);
+const [kids, setKids] = useState([])
   const [children, setChildren] = useState([]);
 
-  console.log("Inside State; ", {forms, children})
+  console.log("Inside State; ", {kids, children})
   useEffect(() => {
-    const url = "http://localhost:3030/forms";
-    console.log("Inside Url: ", url);
+    const url = "http://localhost:3030/children";
 
     fetch(url)
       .then((res) => res.json())
-      .then((formsData) => {
-        console.log("Inside Get Fetch: ", formsData);
+      .then((kidsData) => {
+        console.log("Inside Get Fetch: ", kidsData);
 
-        setForms(formsData);
+        setKids(kidsData);
+        setChildren(kidsData)
       });
   }, []);
   return (
     <main className="grid-container">
-      <LeftAside ListOfChildren={ListOfChildren} />
+      <LeftAside ListOfChildren={ListOfChildren} kids={kids} />
       <RightAside />
     </main>
   );

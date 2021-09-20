@@ -54,6 +54,7 @@ export default function CreateApplicationForm() {
   };
   return (
     <>
+    <h2>Application For Fostering</h2>
     <form onSubmit={handleSubmit} className="form-stack light-shadow center contact-form">
 
       <label htmlFor="first-name-input">First Name:</label>
@@ -123,7 +124,7 @@ export default function CreateApplicationForm() {
         // required
       />
       <small> Format: 123-456-7890</small>
-      <div>
+      <div className="form-one-btn">
         <button>Save</button>
         <button>Continue Application</button>
         <button>Cancel Application</button>

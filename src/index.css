@@ -118,3 +118,25 @@ select {
 .margin-top {
   margin-top: 8px;
 }
+.form-one-btn button:hover {
+  padding: 6px;
+  background-color: gray;
+  font-size: medium;
+}
+.final-submit {
+  width: auto;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  padding: 4px;
+  border-radius: 8px;
+  color: rgb(17, 4, 4);
+}
+.final-submit:hover {
+  width: auto;
+  background-color: red;
+  color: white;
+  margin-top: 12px;
+  padding:6px;
+  border-radius: 10px;
+  font-size: medium;
+}

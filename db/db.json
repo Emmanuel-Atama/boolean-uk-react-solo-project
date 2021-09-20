@@ -21,10 +21,110 @@
       "firstName": "Forrest",
       "lastName": "Whittaker",
       "postCode": "B13 0RJ",
-      "age": 4,
+      "city": "Birmingham",
+      "age": 11,
       "gender": "male",
       "medicalInfo": "none",
-      "senRegister": "yes"
+      "SEN": "no"
+    },
+    {
+      "id": 2,
+      "firstName": "Tom",
+      "lastName": "Cruise",
+      "postCode": "D14 4BJ",
+      "city": "Derby",
+      "age": 6,
+      "gender": "male",
+      "medicalInfo": "ADHD",
+      "SEN": "yes"
+    },
+    {
+      "id": 3,
+      "firstName": "Nicole",
+      "lastName": "Kidman",
+      "postCode": "WV13 7PU",
+      "city": "Wolverhampton",
+      "age": 7,
+      "gender": "Female",
+      "medicalInfo": "none",
+      "SEN": "no"
+    },
+    {
+      "id": 4,
+      "firstName": "Taylor",
+      "lastName": "Swift",
+      "postCode": "DY4 7NE",
+      "city": "Tipton",
+      "age": 5,
+      "gender": "female",
+      "medicalInfo": "none",
+      "SEN": "no"
+    },
+    {
+      "id": 5,
+      "firstName": "Idris",
+      "lastName": "Alba",
+      "postCode": "SW1V 3JD",
+      "city": "London",
+      "age": 9,
+      "gender": "male",
+      "medicalInfo": "none",
+      "SEN": "no,"
+    },
+    {
+      "id": 6,
+      "firstName": "Jack",
+      "lastName": "Sparrow",
+      "postCode": "HU4 3AP",
+      "city": "Hull",
+      "age": 8,
+      "gender": "male",
+      "medicalInfo": "Autism",
+      "SEN": "yes"
+    },
+    {
+      "id": 7,
+      "firstName": "Will",
+      "lastName": "I am",
+      "postCode": "CF371TA",
+      "city": "Pontypridd",
+      "age": 8,
+      "gender": "male",
+      "medicalInfo": "ADHD",
+      "SEN": "yes"
+    },
+    {
+      "id": 8,
+      "firstName": "Rita",
+      "lastName": "Ora",
+      "postCode": "DN8 7BD",
+      "city": "Doncaster",
+      "age": 3,
+      "gender": "female",
+      "medicalInfo": "ADHD",
+      "SEN": "yes"
+    },
+    {
+      "id": 9,
+      "firstName": "Gerald",
+      "lastName": "Butler",
+      "postCode": "L11 4TT",
+      "city": "Liverpool",
+      "age": 7,
+      "gender": "male",
+      "medicalInfo": "none",
+      "SEN": "no"
+    },
+    {
+      "id": 10,
+      "firstName": "Tom",
+      "lastName": "Hardy",
+      "postCode": "LV7 4BD",
+      "city": "Liverpool",
+      "age": 6,
+      "gender": "male",
+      "medicalInfo": "none",
+      "SEN": "no"
     }
   ]
 }
