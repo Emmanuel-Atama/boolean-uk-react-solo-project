@@ -2,8 +2,6 @@ import { useState } from "react";
 
 export default function CreateApplicationForm(props) {
 
-const { contacts, setContacts} = props
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("")
@@ -80,13 +78,15 @@ const { contacts, setContacts} = props
     const contactToAdd = {
       ...newContact,
     }
-    setContacts([...contacts, contactToAdd])
+
+    console.log("isnide create component: ", props.contacts)
+    props.setContacts([...props.contacts, contactToAdd])
   })
   };
   return (
     <>
     <aside className="right-aside">
-    <h2>Application For Fostering</h2>
+    <h2>APPLICATION FOR FOSTERING</h2>
     <form onSubmit={handleSubmit} className="form-stack light-shadow center contact-form">
 
       <label htmlFor="first-name-input">First Name:</label>

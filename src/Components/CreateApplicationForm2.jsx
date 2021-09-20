@@ -32,6 +32,7 @@ console.log("Inside CAF2 State: ", {dob, status, bio, dbs, radioBarred, radioCon
 };
     return (
       <>
+      <h2>Continue Application...</h2>
         <form onSubmit={handleSubmit} className="form-stack light-shadow center contact-form margin-top">
 <label htmlFor="DOB">DOB: </label>
 <input  id="DOB"

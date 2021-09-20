@@ -6,8 +6,11 @@ export default function LeftAside(props) {
          <aside className="left-aside list-section light-shadow">
           <header className="list-of-child-header">
             <h2>LIST OF CHILDREN</h2>
+            <button onClick={() => setHideForm(!hideForm)} className="create-to-apply">
+              {hideForm ? "Apply Now" : "Cancel"}
+              </button>
           </header>
-<ListOfChildren kids={kids} hideForm={hideForm} setHideForm={setHideForm} />
+<ListOfChildren kids={kids} />
         </aside>
     );
   }

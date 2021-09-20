@@ -163,3 +163,12 @@ select {
   border-radius: 10px;
   font-size: medium;
 }
+.create-to-apply {
+  margin-top: 16px;
+  width: auto;
+  height: auto;
+  background-color: rgb(130, 175, 85);
+  margin-top: 12px;
+  border-radius: 6px;
+  color: yellow;
+}

@@ -1,13 +1,13 @@
 export default function ListOfChildren(props) {
 
-  const { kids, hideform, setHideForm } = props
+  const { kids} = props
 
     return (
       <ul>
       {kids.map((kid, index) => {
 
         const {firstName, lastName, city, gender, medicalInfo} = kid
-        
+
     console.log("Inside Kids Map: ", kid)
 
   return (
@@ -19,9 +19,6 @@ export default function ListOfChildren(props) {
           <p> Medical Info: {medicalInfo}</p>
           <div className="list-of-child">
             <button>View Child Details</button>
-            <button onClick={setHideForm(!hideform)}>
-              {hideform ?? "Apply Now"}
-              </button>
           </div>
       </li>
           )
