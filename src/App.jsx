@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import CreateApplicationForm from "./Components/CreateApplicationForm";
 import LeftAside from "./Components/LeftAside";
-import ListOfChildren from "./Components/ListOfChildren";
-import RightAside from "./Components/RightAside";
+import Main from "./Components/Main";
 import "./index.css";
 
 export default function App() {
 const [kids, setKids] = useState([])
-  const [children, setChildren] = useState([]);
+const [contacts, setContacts] = useState([])
+const [hideForm, setHideForm] = useState(true);
+const [children, setChildren] = useState([]);
 
-  console.log("Inside State; ", {kids, children})
+  console.log("Inside State; ", {kids, contacts, hideForm, children})
+
   useEffect(() => {
     const url = "http://localhost:3030/children";
 
@@ -22,10 +25,22 @@ const [kids, setKids] = useState([])
       });
   }, []);
   return (
-    <main className="grid-container">
-      <LeftAside ListOfChildren={ListOfChildren} kids={kids} />
-      <RightAside />
-    </main>
+    <>
+    <header className="header">
+    <h1>Anems Foster Services</h1>
+    <h3><i>...There is a home for every child...</i></h3>
+    </header>
+    <div className="three-column-grid-expand-center">
+    <LeftAside kids={kids} hideForm={hideForm} setHideForm={setHideForm} />
+      <Main />
+      <aside className="right-aside">
+        {!hideForm && (<CreateApplicationForm contacts={contacts} setContacts={setContacts} />)}
+      </aside>
+      </div>
+    
+    </>
+   
+    
   );
 }
 

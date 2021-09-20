@@ -13,6 +13,17 @@
       "dbs": 13421342341,
       "bio": "This is a biography",
       "dateOfBirth": 1631895262643
+    },
+    {
+      "firstName": "Nicholas",
+      "lastName": "Cage",
+      "email": "nicolas@gmail.com",
+      "houseNumber": "6",
+      "street": "Wish Me Luck",
+      "city": "Tipton",
+      "postCode": "DY47NE",
+      "phoneNumber": "079-444-6543",
+      "id": 2
     }
   ],
   "children": [

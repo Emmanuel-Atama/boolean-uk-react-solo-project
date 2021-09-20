@@ -1,10 +1,13 @@
 import { useState } from "react";
-import CreateApplicationForm2 from "./CreateApplicationForm2";
-export default function CreateApplicationForm() {
+
+export default function CreateApplicationForm(props) {
+
+const { contacts, setContacts} = props
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("")
-  const [houseNumber, setHouseNumber] = useState({})
+  const [houseNumber, setHouseNumber] = useState("")
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [postCode, setPostCode] = useState("");
@@ -13,6 +16,7 @@ export default function CreateApplicationForm() {
   console.log("Inside CAF State: ", {
     firstName,
     lastName,
+    email,
     houseNumber,
     street,
     city,
@@ -51,9 +55,37 @@ export default function CreateApplicationForm() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+
+  const contactToCreate = {
+    firstName,
+    lastName,
+    email,
+    houseNumber,
+    street,
+    city,
+    postCode,
+    phoneNumber, 
+  }  
+  const fetchContact = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(contactToCreate)
+  }
+  fetch("http://localhost:3030/contacts", fetchContact)
+  .then(res => res.json())
+  .then(newContact => {
+    console.log("Contact POST request: ", newContact)
+    const contactToAdd = {
+      ...newContact,
+    }
+    setContacts([...contacts, contactToAdd])
+  })
   };
   return (
     <>
+    <aside className="right-aside">
     <h2>Application For Fostering</h2>
     <form onSubmit={handleSubmit} className="form-stack light-shadow center contact-form">
 
@@ -125,12 +157,12 @@ export default function CreateApplicationForm() {
       />
       <small> Format: 123-456-7890</small>
       <div className="form-one-btn">
-        <button>Save</button>
+        <button onClick={handleSubmit} type="submit">Save</button>
         <button>Continue Application</button>
         <button>Cancel Application</button>
       </div>
     </form>
-    <CreateApplicationForm2 />
+    </aside>
     </>
   );
 }

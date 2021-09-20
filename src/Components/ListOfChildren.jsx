@@ -1,31 +1,33 @@
 export default function ListOfChildren(props) {
-  // const { kids } = props
+
+  const { kids, hideform, setHideForm } = props
+
     return (
-      <>
-        <aside className="list-section light-shadow">
-          <header className="list-of-child-header">
-            <h2>LIST OF CHILDREN</h2>
-          </header>
-          <ul>
-            {props.kids.map((kid, index) => {
-              const {firstName, lastName, city} = kid
-console.log("Inside Kids Map: ", kid)
-return (
-<li key={index}>
-                <h3>Full Names of Child</h3>
-                <p>First Name: {firstName}</p>
-                <p>Last Name: {lastName}</p>
-                <p>City: {city}</p>
-                <div className="list-of-child">
-                  <button>View Child Details</button>
-                  <button>Apply Now</button>
-                </div>
-            </li>
-)
-            })}
-          </ul>
-        </aside>
-      </>
+      <ul>
+      {kids.map((kid, index) => {
+
+        const {firstName, lastName, city, gender, medicalInfo} = kid
+        
+    console.log("Inside Kids Map: ", kid)
+
+  return (
+    <li key={index} className="child-list-border">
+          <h3>First Name: {firstName}</h3>
+          <p>Last Name: {lastName}</p>
+          <p>Gender: {gender}</p>
+          <p>City: {city}</p>
+          <p> Medical Info: {medicalInfo}</p>
+          <div className="list-of-child">
+            <button>View Child Details</button>
+            <button onClick={setHideForm(!hideform)}>
+              {hideform ?? "Apply Now"}
+              </button>
+          </div>
+      </li>
+          )
+      })}
+
+    </ul>
     );
   }
   
