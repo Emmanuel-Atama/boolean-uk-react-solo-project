@@ -1,5 +1,5 @@
 export default function ApplicantsList(props) {
-    const {contacts, hideForm, setHideForm, setContactEdit} = props
+    const {contacts, hideForm, setHideForm, setContactEdit, editContactForm, setEditContactForm} = props
     return <>
     <aside className="right-aside">
         <header>
@@ -21,9 +21,9 @@ export default function ApplicantsList(props) {
                       <p>PostCode: {postCode}</p>
                       <p>Phone Number: {phoneNumber}</p>
                       <button
-                      onClick={() => (setContactEdit(contact))}
+                      onClick={() => {setEditContactForm(!editContactForm), setContactEdit(contact)}}
                       >
-                {/* {editContactForm ? "Edit" : "Cancel"} */}
+                {editContactForm ? "Edit" : "Cancel"}
                       </button>
                   </li>
               )

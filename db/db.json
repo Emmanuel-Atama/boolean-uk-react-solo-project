@@ -10,6 +10,17 @@
       "city": "New York",
       "postCode": "90345",
       "phoneNumber": "+1453567987"
+    },
+    {
+      "firstName": "Nick",
+      "lastName": "Cage",
+      "email": "Nick@gmail.com",
+      "houseNumber": "30",
+      "street": "Lucky",
+      "city": "Tipton",
+      "postCode": "DY47NE",
+      "phoneNumber": "123-456-7890",
+      "id": 2
     }
   ],
   "forms": [
