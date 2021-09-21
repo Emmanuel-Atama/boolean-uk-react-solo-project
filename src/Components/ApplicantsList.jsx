@@ -6,15 +6,9 @@ function ApplicantsList(props) {
         <header>
         <h2>Applicants</h2>
       <button 
-      onClick = {() => {setEditContactForm(!editContactForm) 
-      setHideForm(!hideForm)}} className="create-to-apply">
-Apply Now
-      </button>
-      {/* <button 
-      onClick = {() => {setEditContactForm(!editContactForm) 
-      setHideForm(!hideForm)}} className="create-to-apply">
-{hideForm ?? "Cancel"}
-      </button> */}
+      onClick = {() => {setHideForm(!hideForm)}} className="create-to-apply">
+{hideForm ? "Apply Now" : "Cancel"}</button>
+
       </header>
       <ul>
           {contacts.map((contact, index) => {
@@ -32,9 +26,9 @@ Apply Now
 
                       <button onClick = {() => {setEditContactForm(!editContactForm)
                          setContactEdit(contact)}}>
-                            {editContactForm ? "Edit" : "Cancel"}
+                            {editContactForm ? "Edit" : "cancel"}
                       </button>
-      
+      <button>Delete</button>
                   </li>
               )
           })}

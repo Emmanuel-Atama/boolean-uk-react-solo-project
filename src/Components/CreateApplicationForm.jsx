@@ -156,7 +156,7 @@ export default function CreateApplicationForm(props) {
         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
         // required
       />
-      <small> Format: 123-456-7890</small>
+      {/* <small> Format: 0123-456-7890</small> */}
       <div className="form-one-btn">
         <button onClick={handleSubmit} type="submit">Save</button>
         <button>Continue Application</button>
@@ -164,6 +164,5 @@ export default function CreateApplicationForm(props) {
       </div>
     </form>
     </aside>
-   
   );
 }

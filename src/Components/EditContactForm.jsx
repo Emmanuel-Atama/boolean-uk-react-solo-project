@@ -87,7 +87,7 @@ export default function EditContactForm (props) {
         body: JSON.stringify(contactToUpdate),
       }
 
-const url = "http://localhost:3030/contacts";
+const url = `http://localhost:3030/contacts/${contactEdit.id}`;
 
       fetch(url, fetchContactToUpdate)
       .then(res => res.json())
@@ -107,6 +107,8 @@ const url = "http://localhost:3030/contacts";
       };
 
     return (
+      <>
+      <h2>Edit Application Form</h2>
         <form onSubmit={handleSubmit} className="form-stack light-shadow center contact-form">
 
         <label htmlFor="first-name-input">First Name:</label>
@@ -175,10 +177,11 @@ const url = "http://localhost:3030/contacts";
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           // required
         />
-        <small> Format: 123-456-7890</small>
+        {/* <small> Format: 123-456-7890</small> */}
         <div className="form-one-btn">
           <button onClick={handleSubmit} type="submit" className="create-to-apply">Update Details</button>
         </div>
       </form>
+      </>
     )
 }
