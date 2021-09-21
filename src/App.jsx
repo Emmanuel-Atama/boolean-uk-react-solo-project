@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import ApplicantsList from "./Components/ApplicantsList";
 import CreateApplicationForm from "./Components/CreateApplicationForm";
+import EditContactForm from "./Components/EditContactForm";
 import LeftAside from "./Components/LeftAside";
 import "./index.css";
 
 export default function App() {
 const [kids, setKids] = useState([])
 const [contacts, setContacts] = useState([])
+const [forms, setForms] = useState([])
 const [hideForm, setHideForm] = useState(true);
+const [editContactForm, setEditContactForm] = useState(true)
 const [contactEdit, setContactEdit] = useState([])
 
-  console.log("Inside State; ", {kids, contacts, hideForm, contactEdit})
+  console.log("Inside State; ", {kids, contacts, forms, hideForm, contactEdit, editContactForm})
 
   useEffect(() => {
     const url = "http://localhost:3030/children";
@@ -18,7 +21,7 @@ const [contactEdit, setContactEdit] = useState([])
     fetch(url)
       .then((res) => res.json())
       .then((kidsData) => {
-        console.log("Inside Get Fetch: ", kidsData);
+        // console.log("Inside Get Fetch: ", kidsData);
 
         setKids(kidsData);
       });
@@ -33,20 +36,18 @@ const [contactEdit, setContactEdit] = useState([])
     <LeftAside  kids={kids} hideForm={hideForm} setHideForm={setHideForm}/>
     <main className="center">
       {!hideForm && (<CreateApplicationForm contacts={contacts} setContacts={setContacts} />)}
+      {!editContactForm && (<EditContactForm contacts={contacts} setContacts={setContacts} contactEdit={contactEdit}/>)}
     </main>
     <ApplicantsList
       contacts={contacts}
       hideForm={hideForm}
       setHideForm={setHideForm}
-      // editContactForm={editContactForm}
-      // setEditContactForm={setEditContactForm}
+      editContactForm={editContactForm}
+      setEditContactForm={setEditContactForm}
       setContactEdit={setContactEdit}
   />
       </div>
-    
-    </>
-   
-    
+    </> 
   );
 }
 

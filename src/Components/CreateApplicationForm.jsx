@@ -2,6 +2,8 @@ import { useState } from "react";
 
 export default function CreateApplicationForm(props) {
 
+  const {contacts, setContacts, hideForm, setHideForm, editContactForm,  setEditContactForm } = props
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("")
@@ -11,16 +13,16 @@ export default function CreateApplicationForm(props) {
   const [postCode, setPostCode] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(0);
 
-  console.log("Inside CAF State: ", {
-    firstName,
-    lastName,
-    email,
-    houseNumber,
-    street,
-    city,
-    postCode,
-    phoneNumber
-  });
+  // console.log("Inside CAF State: ", {
+  //   firstName,
+  //   lastName,
+  //   email,
+  //   houseNumber,
+  //   street,
+  //   city,
+  //   postCode,
+  //   phoneNumber
+  // });
 
   
   const handleFirstName = (event) => {
@@ -79,12 +81,11 @@ export default function CreateApplicationForm(props) {
       ...newContact,
     }
 
-    console.log("isnide create component: ", props.contacts)
-    props.setContacts([...props.contacts, contactToAdd])
+    setContacts([...contacts, contactToAdd])
   })
   };
   return (
-    <>
+    
     <aside className="right-aside">
     <h2>APPLICATION FOR FOSTERING</h2>
     <form onSubmit={handleSubmit} className="form-stack light-shadow center contact-form">
@@ -159,10 +160,10 @@ export default function CreateApplicationForm(props) {
       <div className="form-one-btn">
         <button onClick={handleSubmit} type="submit">Save</button>
         <button>Continue Application</button>
-        <button>Cancel Application</button>
+        <button >Cancel Application</button>
       </div>
     </form>
     </aside>
-    </>
+   
   );
 }

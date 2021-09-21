@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function CreateApplicationForm2() {
+export default function CreateApplicationForm2(props) {
   const [dob, setDob] = useState("")
   const [status, setStatus] = useState("")
   const [bio, setBio] = useState("")
@@ -10,7 +10,7 @@ export default function CreateApplicationForm2() {
   const [radioDvla, setRadioDvla] = useState(false)
   const [radioDrivingPoints, setRadioDrivingPoints] = useState(false)
 
-console.log("Inside CAF2 State: ", {dob, status, bio, dbs, radioBarred, radioConvict, radioDvla, radioDrivingPoints})
+// console.log("Inside CAF2 State: ", {dob, status, bio, dbs, radioBarred, radioConvict, radioDvla, radioDrivingPoints})
 
  const handleDOB = event => {setDob(event.target.value)}
 
@@ -18,22 +18,50 @@ console.log("Inside CAF2 State: ", {dob, status, bio, dbs, radioBarred, radioCon
 
  const handleBio = event => {setBio(event.target.value)}
 
- const handleRadioBarred= event => {setRadioBarred(event.target.value)}
+ const handleRadioBarred= event => {setRadioBarred(event.target.checked)}
 
  const handleDbs = event => {setDbs(event.target.value)}
 
- const handleRadioConvict = event => {setRadioConvict(event.target.value)}
+ const handleRadioConvict = event => {setRadioConvict(event.target.checked)}
 
- const handleRadioDvla = event => {setRadioDvla(event.target.value)}
+ const handleRadioDvla = event => {setRadioDvla(event.target.checked)}
 
- const handleRadioDrivingPoints = event => {setRadioDrivingPoints(event.target.value)}
+ const handleRadioDrivingPoints = event => {setRadioDrivingPoints(event.target.checked)}
  const handleSubmit = (event) => {
   event.preventDefault();
+
+  const formToCreate = {
+    dob,
+   status,
+    bio,
+   dbs,
+    radioBarred,
+    radioConvict,
+    radioDvla,
+    radioDrivingPoints, 
+  }  
+  const fetchForm = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formToCreate)
+  }
+  fetch("http://localhost:3030/forms", fetchForm)
+  .then(res => res.json())
+  .then(newForm => {
+    console.log("Forms POST request: ", newForm)
+    const formToAdd = {
+      ...newForm,
+    }
+
+    props.setForms([...props.forms, formToAdd])
+  })
 };
     return (
       <>
       <h2>Continue Application...</h2>
-        <form onSubmit={handleSubmit} className="form-stack light-shadow center contact-form margin-top">
+        <form onSubmit={handleSubmit} className="form-stack light-shadow center Form-form margin-top">
 <label htmlFor="DOB">DOB: </label>
 <input  id="DOB"
         name="DOB"

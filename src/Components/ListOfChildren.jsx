@@ -8,7 +8,7 @@ export default function ListOfChildren(props) {
 
         const {firstName, lastName, city, gender, medicalInfo} = kid
 
-    console.log("Inside Kids Map: ", kid)
+    // console.log("Inside Kids Map: ", kid)
 
   return (
     <li key={index} className="child-list-border">

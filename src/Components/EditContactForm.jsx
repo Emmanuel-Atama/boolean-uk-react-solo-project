@@ -13,16 +13,17 @@ export default function EditContactForm (props) {
     const [postCode, setPostCode] = useState("");
     const [phoneNumber, setPhoneNumber] = useState(0)
 
-    console.log("Inside EditContact State: ", {
-        firstName,
-        lastName,
-        email,
-        houseNumber,
-        street,
-        city,
-        postCode,
-        phoneNumber
-      })
+    // console.log("Inside EditContact State: ", {
+    //     firstName,
+    //     lastName,
+    //     email,
+    //     houseNumber,
+    //     street,
+    //     city,
+    //     postCode,
+    //     phoneNumber,
+    //   })
+    
       useEffect(() => {
         if (contactEdit) {
             setFirstName(contactEdit.firstName);
@@ -91,7 +92,7 @@ const url = "http://localhost:3030/contacts";
       fetch(url, fetchContactToUpdate)
       .then(res => res.json())
       .then(updatedContact => {
-        console.log("Contact POST request: ", updatedContact)
+        // console.log("Contact POST request: ", updatedContact)
         const  updatedContacts = contacts.map(contact => {
             if (contact.id === updatedContact.id) {
                 return {
@@ -176,7 +177,7 @@ const url = "http://localhost:3030/contacts";
         />
         <small> Format: 123-456-7890</small>
         <div className="form-one-btn">
-          <button onClick={handleSubmit} type="submit">Update Details</button>
+          <button onClick={handleSubmit} type="submit" className="create-to-apply">Update Details</button>
         </div>
       </form>
     )
