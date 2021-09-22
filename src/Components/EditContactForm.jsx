@@ -105,10 +105,20 @@ const url = `http://localhost:3030/contacts/${contactEdit.id}`;
         setContacts(updatedContacts)
       })
       };
+const fetchContactToDelete = {
+  method: "DELETE"
+};
+const delUrl = `http://localhost:3030/contacts/${contact.id}`
 
+// console.log("Inside delUrl: ", delUrl)
+
+fetch(delUrl, fetchContactToDelete)
+.then(() =>
+setDelete()
+)
     return (
       <>
-      <h2>Edit Application Form</h2>
+      <h2>Edit Application</h2>
         <form onSubmit={handleSubmit} className="form-stack light-shadow center contact-form">
 
         <label htmlFor="first-name-input">First Name:</label>
@@ -178,8 +188,9 @@ const url = `http://localhost:3030/contacts/${contactEdit.id}`;
           // required
         />
         {/* <small> Format: 123-456-7890</small> */}
-        <div className="form-one-btn">
+        <div>
           <button onClick={handleSubmit} type="submit" className="create-to-apply">Update Details</button>
+          <button class="delete-btn">Delete</button>
         </div>
       </form>
       </>
