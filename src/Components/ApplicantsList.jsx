@@ -25,10 +25,10 @@ function ApplicantsList(props) {
                       <p>Phone Number: {phoneNumber}</p>
 
                       <button onClick = {() => {setEditContactForm(!editContactForm)
-                         setContactEdit(contact)}}>
+                         setContactEdit(contact)}} class="delete-btn">
                             {editContactForm ? "Edit" : "cancel"}
                       </button>
-      <button>Delete</button>
+      <button class="delete-btn">Delete</button>
                   </li>
               )
           })}

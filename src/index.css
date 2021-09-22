@@ -168,7 +168,21 @@ select {
   width: auto;
   height: auto;
   background-color: rgb(130, 175, 85);
-  margin-top: 12px;
+  border-radius: 6px;
+  color: yellow;
+}
+.delete-btn {
+  margin-top: 16px;
+  width: auto;
+  height: auto;
+  background-color: rgb(130, 175, 85);
+  border-radius: 6px;
+  color: yellow;
+}
+.delete-btn:hover {
+  width: auto;
+  height: auto;
+  background-color: rgb(129, 13, 13);
   border-radius: 6px;
   color: yellow;
 }
