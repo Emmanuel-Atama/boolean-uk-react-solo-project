@@ -2,66 +2,23 @@
   "contacts": [
     {
       "id": 1,
-      "firstName": "John",
-      "lastName": "Wick",
-      "email": "hitman123@outlook.com",
-      "houseNumber": 82,
-      "street": "Beaver Street",
-      "city": "New York",
-      "postCode": "90345",
-      "phoneNumber": "+1453567987"
-    },
-    {
-      "firstName": "qwerty",
-      "lastName": "qwerty",
-      "email": "qwerty@gmail.com",
-      "houseNumber": "77",
-      "street": "qwerty street",
-      "city": "qwerty",
-      "postCode": "qw123er",
-      "phoneNumber": "0123456789",
-      "id": 2
-    },
-    {
-      "firstName": "Chelsea",
-      "lastName": "FC",
-      "email": "cfc@gmail.com",
-      "houseNumber": "100",
-      "street": "Stamford Bridge",
-      "city": "London",
-      "postCode": "SW125TR",
-      "phoneNumber": "23456788765",
-      "id": 3
-    },
-    {
-      "firstName": "Humber",
-      "lastName": "Bridge",
-      "email": "H-bridge@g.com",
-      "houseNumber": "12",
-      "street": "Beverley road",
-      "city": "Hull",
-      "postCode": "HU51LH",
-      "phoneNumber": "663663373777575",
-      "id": 4
-    },
-    {
-      "firstName": "Willow",
-      "lastName": "Smith",
-      "email": "will@gmail.com",
-      "houseNumber": "16",
-      "street": "Actor Street",
-      "city": "Hollywood",
-      "postCode": "B134RT",
-      "phoneNumber": "01234567899",
-      "id": 5
-    }
-  ],
-  "forms": [
-    {
-      "dateOfBirth": 1631895262643,
-      "dbs": 13421342341,
-      "status": "single",
-      "bio": "This is a biography"
+      "firstName": "Jennifer",
+      "lastName": "Lopez",
+      "gender": "married",
+      "email": "Jlo@gmail.com",
+      "houseNumber": "123",
+      "street": "Nollywood Street",
+      "city": "Nollywood",
+      "postCode": "NW345RE",
+      "phoneNumber": "+9872667277277",
+      "dob": "1970-12-23",
+      "status": "married",
+      "bio": "Nice and caring.",
+      "dbs": "1234567890",
+      "radioBarred": true,
+      "radioConvict": true,
+      "radioDvla": true,
+      "radioDrivingPoints": true
     }
   ],
   "children": [

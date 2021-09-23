@@ -27,7 +27,7 @@ export default function CreateApplicationForm2(props) {
  const handleRadioDvla = event => {setRadioDvla(event.target.checked)}
 
  const handleRadioDrivingPoints = event => {setRadioDrivingPoints(event.target.checked)}
- const handleSubmit = (event) => {
+ const handleCAF2Submit = (event) => {
   event.preventDefault();
 
   const formToCreate = {
@@ -61,7 +61,7 @@ export default function CreateApplicationForm2(props) {
     return (
       <>
       <h2>Continue Application...</h2>
-        <form onSubmit={handleSubmit} className="form-stack light-shadow center Form-form margin-top">
+        <form onSubmit={handleCAF2Submit} className="form-stack light-shadow center Form-form margin-top">
 <label htmlFor="DOB">DOB: </label>
 <input  id="DOB"
         name="DOB"
@@ -85,22 +85,22 @@ export default function CreateApplicationForm2(props) {
 <input id="dbs" name="dbs" type="number" value={dbs} onChange={handleDbs}/>
 
 <label htmlFor="barred">Are you barred from working with children?</label>
-<input type="radio" name="yes" value="yes"  onChange={handleRadioBarred} checked={radioBarred} />Yes
+<input type="radio" name="yes" value="yes"  onChange={handleRadioBarred} />Yes
 <input type="radio" name="no" value="no"  onChange={handleRadioBarred} />No
 
 <label htmlFor="convictions">Do you have Any spent or unspent convictions?</label>
-<input type="radio" name="yes" value="yes"  onChange={handleRadioConvict} checked={radioConvict}/>Yes
+<input type="radio" name="yes" value="yes"  onChange={handleRadioConvict} />Yes
 <input type="radio" name="no" value="no"  onChange={handleRadioConvict} />No
 
 <label htmlFor="dvla">Do you have a valid drivers license?</label>
-<input type="radio" name="yes" value="yes"  onChange={handleRadioDvla} checked={radioDvla}/>Yes
+<input type="radio" name="yes" value="yes"  onChange={handleRadioDvla} />Yes
 <input type="radio" name="no" value="no"  onChange={handleRadioDvla} />No
 
 <label htmlFor="driving-points">Do you have any points on your drivers license?</label>
-<input type="radio" name="yes" value="yes" onChange={handleRadioDrivingPoints} checked={radioDrivingPoints}/>Yes
+<input type="radio" name="yes" value="yes" onChange={handleRadioDrivingPoints} />Yes
 <input type="radio" name="no" value="no" onChange={handleRadioDrivingPoints} />No
 <div>
-        <button onClick={handleSubmit} type="submit" className="final-submit" >
+        <button onClick={handleCAF2Submit} type="submit" className="final-submit" >
          Submit Application
         </button>
       </div>

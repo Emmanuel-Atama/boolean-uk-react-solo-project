@@ -1,5 +1,5 @@
 function ApplicantsList(props) {
-    const { contacts, hideForm, setHideForm, editContactForm,  setEditContactForm, setContactEdit } = props
+    const { contacts, hideForm, setHideForm, editContactForm,  setEditContactForm, setContactEdit, handleDelete } = props
 
     return (
     <aside className="right-aside">
@@ -12,7 +12,8 @@ function ApplicantsList(props) {
       </header>
       <ul>
           {contacts.map((contact, index) => {
-              const {firstName, lastName, email, houseNumber, street, city, postCode, phoneNumber} = contact
+              const {firstName, lastName, email, houseNumber, street, city, postCode, phoneNumber, dob, status, bio, dbs, radioBarred, 
+                radioConvict, radioDvla, radioDrivingPoints} = contact
               return(
                   <li key={index} className="child-list-border">
                       <h3>First Name: {firstName}</h3>
@@ -23,12 +24,20 @@ function ApplicantsList(props) {
                       <p>City: {city}</p>
                       <p>PostCode: {postCode}</p>
                       <p>Phone Number: {phoneNumber}</p>
+                      <p>Date Of Birth: {dob}</p>
+                      <p>Status: {status}</p>
+                      <p>Biography: {bio}</p>
+                      <p>DBS Number: {dbs}</p>
+                      <p>Barring List: {radioBarred}</p>
+                      <p>Any Convictions: {radioConvict}</p>
+                      <p>Driver's License: {radioDvla}</p>
+                      <p>Driving Penalty: {radioDrivingPoints}</p>
 
                       <button onClick = {() => {setEditContactForm(!editContactForm)
                          setContactEdit(contact)}} class="delete-btn">
                             {editContactForm ? "Edit" : "cancel"}
                       </button>
-      <button class="delete-btn">Delete</button>
+      <button class="delete-btn" onClick={handleDelete}>Delete</button>
                   </li>
               )
           })}

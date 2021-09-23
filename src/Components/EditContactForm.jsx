@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export default function EditContactForm (props) {
 
     const { contactEdit, contacts, setContacts } = props;
-
+    const [gender, setGender] = useState("")
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("")
@@ -11,60 +11,72 @@ export default function EditContactForm (props) {
     const [street, setStreet] = useState("");
     const [city, setCity] = useState("");
     const [postCode, setPostCode] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState(0)
-
-    // console.log("Inside EditContact State: ", {
-    //     firstName,
-    //     lastName,
-    //     email,
-    //     houseNumber,
-    //     street,
-    //     city,
-    //     postCode,
-    //     phoneNumber,
-    //   })
+    const [phoneNumber, setPhoneNumber] = useState()
+    const [dob, setDob] = useState("")
+  const [status, setStatus] = useState("")
+  const [bio, setBio] = useState("")
+  const [dbs, setDbs] = useState("")
+  const [radioBarred, setRadioBarred] = useState(false)
+  const [radioConvict, setRadioConvict] = useState(false)
+  const [radioDvla, setRadioDvla] = useState(false)
+  const [radioDrivingPoints, setRadioDrivingPoints] = useState(false)
     
       useEffect(() => {
         if (contactEdit) {
             setFirstName(contactEdit.firstName);
             setLastName(contactEdit.lastName);
+            setGender(contactEdit.gender)
             setEmail(contactEdit.email)
             setHouseNumber(contactEdit.houseNumber)
             setStreet(contactEdit.street)
             setCity(contactEdit.city)
             setPostCode(contactEdit.postCode)
             setPhoneNumber(contactEdit.phoneNumber)
+            setDob(contactEdit.dob)
+            setStatus(contactEdit.status)
+            setBio(contactEdit.bio)
+            setDbs(contactEdit.dbs)
+            setRadioBarred(contactEdit.radioBarred)
+            setRadioConvict(contactEdit.radioConvict)
+            setRadioDrivingPoints(contactEdit.radioDrivingPoints)
+            setRadioDvla(contactEdit.radioDvla)
         }
       }, [contactEdit])
 
-    const handleFirstName = (event) => {
-        setFirstName(event.target.value);
-      };
+      const handleFirstName = (event) => {setFirstName(event.target.value);};
+
+      const handleLastName = (event) => {setLastName(event.target.value)};
     
-      const handleLastName = (event) => {
-        setLastName(event.target.value);
-      };
-      const handleEmail = (event) => {
-        setEmail(event.target.value);
-      };
-      const handleHouseNumber = (event) => {
-        setHouseNumber(event.target.value);
-      };
+      const handleGender = event => {setGender(event.target.value)}
     
-      const handleStreet = (event) => {
-        setStreet(event.target.value);
-      };
+      const handleEmail = (event) => {setEmail(event.target.value)};
     
-      const handleCity = (event) => {
-        setCity(event.target.value);
-      };
+      const handleHouseNumber = (event) => {setHouseNumber(event.target.value)};
     
-      const handlePostCode = (event) => {
-        setPostCode(event.target.value);
-      };
-      const handlePhone = (event) => {
-        setPhoneNumber(event.target.value);
-      };
+      const handleStreet = (event) => {setStreet(event.target.value)};
+    
+      const handleCity = (event) => {setCity(event.target.value)};
+    
+    const handlePostCode = (event) => {setPostCode(event.target.value)};
+    
+    const handlePhone = (event) => {setPhoneNumber(event.target.value)};
+    
+     const handleDOB = event => {setDob(event.target.value)}
+    
+     const handleStatus = event => {setStatus(event.target.value)}
+    
+     const handleBio = event => {setBio(event.target.value)}
+  
+     const handleDbs = event => {setDbs(event.target.value)}
+
+     const handleRadioBarred= event => {setRadioBarred(event.target.checked)}
+    
+     const handleRadioConvict = event => {setRadioConvict(event.target.checked)}
+    
+     const handleRadioDvla = event => {setRadioDvla(event.target.checked)}
+    
+     const handleRadioDrivingPoints = event => {setRadioDrivingPoints(event.target.checked)}
+    
 
       const handleSubmit = (event) => {
         event.preventDefault();
@@ -77,7 +89,15 @@ export default function EditContactForm (props) {
         street,
         city,
         postCode,
-        phoneNumber, 
+        phoneNumber,
+        dob,
+    status,
+    bio,
+    dbs,
+    radioBarred,
+    radioConvict,
+    radioDvla,
+    radioDrivingPoints
       }  
       const fetchContactToUpdate = {
         method: "PATCH",
@@ -105,17 +125,24 @@ const url = `http://localhost:3030/contacts/${contactEdit.id}`;
         setContacts(updatedContacts)
       })
       };
-const fetchContactToDelete = {
-  method: "DELETE"
-};
-const delUrl = `http://localhost:3030/contacts/${contact.id}`
+      const handleDelete = (event) => {
+      
+        const fetchContactToDelete = {
+          method: "DELETE"
+        };
 
-// console.log("Inside delUrl: ", delUrl)
+      const delUrl = `http://localhost:3030/contacts/${contactEdit.id}`
 
-fetch(delUrl, fetchContactToDelete)
-.then(() =>
-setDelete()
-)
+      console.log("Inside delUrl: ", delUrl)
+
+      fetch(delUrl, fetchContactToDelete).then()
+      // .then((res) =>res.json())
+      // .then((deletedContact) => {
+
+      //   setContacts(deletedContact)
+      // })
+
+      }
     return (
       <>
       <h2>Edit Application</h2>
@@ -137,6 +164,15 @@ setDelete()
           type="text"
           value={lastName}
         />
+
+<label htmlFor="gender-status">Gender</label>
+        <select name="gender" id="gender" value={gender} onChange={handleGender} required>
+          <option value="">--Choose Your Gender--</option>
+          <option value="single">Male</option>
+          <option value="married">Female</option>
+          <option value="civil">Prefer Not To Say</option>
+        </select>
+
             <label for="email">Email:</label>
         <input
           onChange={handleEmail}
@@ -187,10 +223,47 @@ setDelete()
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           // required
         />
-        {/* <small> Format: 123-456-7890</small> */}
+        <small> Format: 123-456-7890</small>
+        <label htmlFor="DOB">DOB: </label>
+<input  id="DOB"
+        name="DOB"
+        type= "date"
+        min="1970-01-01"
+        max="1996-01-01"
+        value={dob}
+        onChange={handleDOB}
+        required
+        />
+        <label htmlFor="relationship-status">Status</label>
+        <select name="status" id="status" value={status} onChange={handleStatus} required>
+          <option value="">--Choose Your Status--</option>
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+          <option value="civil">Civil Partnership</option>
+        </select>
+        <label htmlFor="bio">Section One: Bio </label>
+        <textarea value={bio} onChange={handleBio} name="bio" id="bio" cols="30" rows="10" placeholder="...Bio and Background"></textarea>
+<label htmlFor="dbs">Disclosure Number (DBS): </label>
+<input id="dbs" name="dbs" type="number" value={dbs} onChange={handleDbs} minLength="10" maxLength="10" />
+
+<label htmlFor="barred">Are you barred from working with children?</label>
+<input type="radio" name="children" value="yes"  onChange={handleRadioBarred} />Yes
+<input type="radio" name="children" value="no"  onChange={handleRadioBarred} />No
+
+<label htmlFor="convictions">Do you have Any spent or unspent convictions?</label>
+<input type="radio" name="conviction" value="yes"  onChange={handleRadioConvict} />Yes
+<input type="radio" name="conviction" value="no"  onChange={handleRadioConvict} />No
+
+<label htmlFor="dvla">Do you have a valid drivers license?</label>
+<input type="radio" name="driver" value="yes"  onChange={handleRadioDvla} />Yes
+<input type="radio" name="driver" value="no"  onChange={handleRadioDvla} />No
+
+<label htmlFor="driving-points">Do you have any points on your drivers license?</label>
+<input type="radio" name="points" value="yes" onChange={handleRadioDrivingPoints} />Yes
+<input type="radio" name="points" value="no" onChange={handleRadioDrivingPoints} />No
         <div>
           <button onClick={handleSubmit} type="submit" className="create-to-apply">Update Details</button>
-          <button class="delete-btn">Delete</button>
+          <button class="delete-btn" onClick={handleDelete}>Delete</button>
         </div>
       </form>
       </>

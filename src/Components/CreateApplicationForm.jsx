@@ -1,70 +1,82 @@
 import { useState } from "react";
+import CreateApplicationForm2 from "./CreateApplicationForm2";
 
 export default function CreateApplicationForm(props) {
 
-  const {contacts, setContacts, hideForm, setHideForm, editContactForm,  setEditContactForm } = props
-
+  const {contacts, setContacts, forms, setForms} = props
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [gender, setGender] = useState("")
   const [email, setEmail] = useState("")
   const [houseNumber, setHouseNumber] = useState("")
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [postCode, setPostCode] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState(0);
+  const [phoneNumber, setPhoneNumber] = useState();
+  const [dob, setDob] = useState("")
+  const [status, setStatus] = useState("")
+  const [bio, setBio] = useState("")
+  const [dbs, setDbs] = useState("")
+  const [radioBarred, setRadioBarred] = useState(false)
+  const [radioConvict, setRadioConvict] = useState(false)
+  const [radioDvla, setRadioDvla] = useState(false)
+  const [radioDrivingPoints, setRadioDrivingPoints] = useState(false)
 
-  // console.log("Inside CAF State: ", {
-  //   firstName,
-  //   lastName,
-  //   email,
-  //   houseNumber,
-  //   street,
-  //   city,
-  //   postCode,
-  //   phoneNumber
-  // });
+  const handleFirstName = (event) => {setFirstName(event.target.value);};
 
-  
-  const handleFirstName = (event) => {
-    setFirstName(event.target.value);
-  };
+  const handleLastName = (event) => {setLastName(event.target.value)};
 
-  const handleLastName = (event) => {
-    setLastName(event.target.value);
-  };
-  const handleEmail = (event) => {
-    setEmail(event.target.value);
-  };
-  const handleHouseNumber = (event) => {
-    setHouseNumber(event.target.value);
-  };
+  const handleGender = event => {setGender(event.target.value)}
 
-  const handleStreet = (event) => {
-    setStreet(event.target.value);
-  };
+  const handleEmail = (event) => {setEmail(event.target.value)};
 
-  const handleCity = (event) => {
-    setCity(event.target.value);
-  };
+  const handleHouseNumber = (event) => {setHouseNumber(event.target.value)};
 
-  const handlePostCode = (event) => {
-    setPostCode(event.target.value);
-  };
-  const handlePhone = (event) => {
-    setPhoneNumber(event.target.value);
-  };
-  const handleSubmit = (event) => {
+  const handleStreet = (event) => {setStreet(event.target.value)};
+
+  const handleCity = (event) => {setCity(event.target.value)};
+
+const handlePostCode = (event) => {setPostCode(event.target.value)};
+
+const handlePhone = (event) => {setPhoneNumber(event.target.value)};
+
+ const handleDOB = event => {setDob(event.target.value)}
+
+ const handleStatus = event => {setStatus(event.target.value)}
+
+ const handleBio = event => {setBio(event.target.value)}
+
+ const handleRadioBarred= event => {setRadioBarred(event.target.checked)}
+
+ const handleDbs = event => {setDbs(event.target.value)}
+
+ const handleRadioConvict = event => {setRadioConvict(event.target.checked)}
+
+ const handleRadioDvla = event => {setRadioDvla(event.target.checked)}
+
+ const handleRadioDrivingPoints = event => {setRadioDrivingPoints(event.target.checked)}
+
+const handleSubmit = (event) => {
     event.preventDefault();
 
   const contactToCreate = {
     firstName,
     lastName,
+    gender,
     email,
     houseNumber,
     street,
     city,
     postCode,
-    phoneNumber, 
+    phoneNumber,
+    dob,
+    status,
+    bio,
+    dbs,
+    radioBarred,
+    radioConvict,
+    radioDvla,
+    radioDrivingPoints
   }  
   const fetchContact = {
     method: "POST",
@@ -106,6 +118,15 @@ export default function CreateApplicationForm(props) {
         type="text"
         value={lastName}
       />
+
+<label htmlFor="gender-status">Gender</label>
+        <select name="gender" id="gender" value={gender} onChange={handleGender} required>
+          <option value="">--Choose Your Gender--</option>
+          <option value="single">Male</option>
+          <option value="married">Female</option>
+          <option value="civil">Prefer Not To Say</option>
+        </select>
+
           <label for="email">Email:</label>
       <input
         onChange={handleEmail}
@@ -156,13 +177,52 @@ export default function CreateApplicationForm(props) {
         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
         // required
       />
-      {/* <small> Format: 0123-456-7890</small> */}
+      <small> Format: 0123-456-7890</small>
+      
+      <label htmlFor="DOB">DOB: </label>
+<input  id="DOB"
+        name="DOB"
+        type= "date"
+        min="1970-01-01"
+        max="1996-01-01"
+        value={dob}
+        onChange={handleDOB}
+        required
+        />
+        <label htmlFor="relationship-status">Status</label>
+        <select name="status" id="status" value={status} onChange={handleStatus} required>
+          <option value="">--Choose Your Status--</option>
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+          <option value="civil">Civil Partnership</option>
+        </select>
+        <label htmlFor="bio">Section One: Bio </label>
+        <textarea value={bio} onChange={handleBio} name="bio" id="bio" cols="30" rows="10" placeholder="...Bio and Background"></textarea>
+<label htmlFor="dbs">Disclosure Number (DBS): </label>
+<input id="dbs" name="dbs" type="number" value={dbs} onChange={handleDbs} minLength="10" maxLength="10" />
+
+<label htmlFor="barred">Are you barred from working with children?</label>
+<input type="radio" name="children" value="yes"  onChange={handleRadioBarred} />Yes
+<input type="radio" name="children" value="no"  onChange={handleRadioBarred} />No
+
+<label htmlFor="convictions">Do you have Any spent or unspent convictions?</label>
+<input type="radio" name="conviction" value="yes"  onChange={handleRadioConvict} />Yes
+<input type="radio" name="conviction" value="no"  onChange={handleRadioConvict} />No
+
+<label htmlFor="dvla">Do you have a valid drivers license?</label>
+<input type="radio" name="driver" value="yes"  onChange={handleRadioDvla} />Yes
+<input type="radio" name="driver" value="no"  onChange={handleRadioDvla} />No
+
+<label htmlFor="driving-points">Do you have any points on your drivers license?</label>
+<input type="radio" name="points" value="yes" onChange={handleRadioDrivingPoints} />Yes
+<input type="radio" name="points" value="no" onChange={handleRadioDrivingPoints} />No
       <div className="form-one-btn">
         <button onClick={handleSubmit} type="submit">Save</button>
-        <button>Continue Application</button>
-        <button >Cancel Application</button>
+        {/* <button onClick={handleCAForm2}> Continue Application </button> */}
+        <button> Cancel Application </button>
       </div>
     </form>
+   {/* { showCAForm2 ? <CreateApplicationForm2 forms={forms} setForms={setForms}/> : <></>} */}
     </aside>
   );
 }

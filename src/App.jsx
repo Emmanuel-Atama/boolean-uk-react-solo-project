@@ -16,6 +16,18 @@ const [contactEdit, setContactEdit] = useState([])
   console.log("Inside State; ", {kids, contacts, forms, hideForm, contactEdit, editContactForm})
 
   useEffect(() => {
+    const url = "http://localhost:3030/contacts";
+
+    fetch(url)
+      .then((res) => res.json())
+      .then((contactData) => {
+        // console.log("Inside Get Fetch: ", contactData);
+
+        setContacts(contactData);
+      });
+  }, []);
+
+  useEffect(() => {
     const url = "http://localhost:3030/children";
 
     fetch(url)
@@ -26,6 +38,7 @@ const [contactEdit, setContactEdit] = useState([])
         setKids(kidsData);
       });
   }, []);
+
   return (
     <>
     <header className="header">
@@ -45,6 +58,7 @@ const [contactEdit, setContactEdit] = useState([])
       editContactForm={editContactForm}
       setEditContactForm={setEditContactForm}
       setContactEdit={setContactEdit}
+
   />
       </div>
     </> 
