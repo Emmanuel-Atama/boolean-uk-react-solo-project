@@ -1,9 +1,9 @@
 import { useState } from "react";
-import CreateApplicationForm2 from "./CreateApplicationForm2";
+
 
 export default function CreateApplicationForm(props) {
 
-  const {contacts, setContacts, forms, setForms} = props
+  const {contacts, setContacts} = props
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [gender, setGender] = useState("")
@@ -122,9 +122,9 @@ const handleSubmit = (event) => {
 <label htmlFor="gender-status">Gender</label>
         <select name="gender" id="gender" value={gender} onChange={handleGender} required>
           <option value="">--Choose Your Gender--</option>
-          <option value="single">Male</option>
-          <option value="married">Female</option>
-          <option value="civil">Prefer Not To Say</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Prefer Not To Say">Prefer Not To Say</option>
         </select>
 
           <label for="email">Email:</label>

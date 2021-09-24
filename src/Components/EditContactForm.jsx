@@ -84,6 +84,7 @@ export default function EditContactForm (props) {
       const contactToUpdate = {
         firstName,
         lastName,
+        gender,
         email,
         houseNumber,
         street,
@@ -135,7 +136,8 @@ const url = `http://localhost:3030/contacts/${contactEdit.id}`;
 
       console.log("Inside delUrl: ", delUrl)
 
-      fetch(delUrl, fetchContactToDelete).then()
+      fetch(delUrl, fetchContactToDelete)
+      // .then()
       // .then((res) =>res.json())
       // .then((deletedContact) => {
 
@@ -168,9 +170,9 @@ const url = `http://localhost:3030/contacts/${contactEdit.id}`;
 <label htmlFor="gender-status">Gender</label>
         <select name="gender" id="gender" value={gender} onChange={handleGender} required>
           <option value="">--Choose Your Gender--</option>
-          <option value="single">Male</option>
-          <option value="married">Female</option>
-          <option value="civil">Prefer Not To Say</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Prefer Not To Say">Prefer Not To Say</option>
         </select>
 
             <label for="email">Email:</label>
@@ -263,7 +265,7 @@ const url = `http://localhost:3030/contacts/${contactEdit.id}`;
 <input type="radio" name="points" value="no" onChange={handleRadioDrivingPoints} />No
         <div>
           <button onClick={handleSubmit} type="submit" className="create-to-apply">Update Details</button>
-          <button class="delete-btn" onClick={handleDelete}>Delete</button>
+          <button className="delete-btn" onClick={handleDelete}>Delete</button>
         </div>
       </form>
       </>

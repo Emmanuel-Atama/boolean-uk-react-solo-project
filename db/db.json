@@ -1,24 +1,24 @@
 {
   "contacts": [
     {
-      "id": 1,
-      "firstName": "Jennifer",
-      "lastName": "Lopez",
-      "gender": "married",
-      "email": "Jlo@gmail.com",
-      "houseNumber": "123",
-      "street": "Nollywood Street",
-      "city": "Nollywood",
-      "postCode": "NW345RE",
-      "phoneNumber": "+9872667277277",
-      "dob": "1970-12-23",
+      "firstName": "Emma",
+      "lastName": "Atama",
+      "gender": "Female",
+      "email": "eat@g.com",
+      "houseNumber": "1",
+      "street": "Tipton",
+      "city": "Sandwel",
+      "postCode": "DY12TR",
+      "phoneNumber": "+794456677655",
+      "dob": "1987-11-28",
       "status": "married",
-      "bio": "Nice and caring.",
-      "dbs": "1234567890",
+      "bio": "Nice and caring individual...",
+      "dbs": "41567789986",
       "radioBarred": true,
       "radioConvict": true,
       "radioDvla": true,
-      "radioDrivingPoints": true
+      "radioDrivingPoints": true,
+      "id": 2
     }
   ],
   "children": [
@@ -30,8 +30,8 @@
       "city": "Birmingham",
       "age": 11,
       "gender": "male",
-      "medicalInfo": "none",
-      "SEN": "no"
+      "medicalInfo": "None",
+      "SEN": "No"
     },
     {
       "id": 2,
@@ -42,7 +42,7 @@
       "age": 6,
       "gender": "male",
       "medicalInfo": "ADHD",
-      "SEN": "yes"
+      "SEN": "Yes"
     },
     {
       "id": 3,
@@ -52,8 +52,8 @@
       "city": "Wolverhampton",
       "age": 7,
       "gender": "Female",
-      "medicalInfo": "none",
-      "SEN": "no"
+      "medicalInfo": "None",
+      "SEN": "No"
     },
     {
       "id": 4,
@@ -63,8 +63,8 @@
       "city": "Tipton",
       "age": 5,
       "gender": "female",
-      "medicalInfo": "none",
-      "SEN": "no"
+      "medicalInfo": "None",
+      "SEN": "No"
     },
     {
       "id": 5,
@@ -74,8 +74,8 @@
       "city": "London",
       "age": 9,
       "gender": "male",
-      "medicalInfo": "none",
-      "SEN": "no,"
+      "medicalInfo": "None",
+      "SEN": "No,"
     },
     {
       "id": 6,
@@ -86,7 +86,7 @@
       "age": 8,
       "gender": "male",
       "medicalInfo": "Autism",
-      "SEN": "yes"
+      "SEN": "Yes"
     },
     {
       "id": 7,
@@ -97,7 +97,7 @@
       "age": 8,
       "gender": "male",
       "medicalInfo": "ADHD",
-      "SEN": "yes"
+      "SEN": "Yes"
     },
     {
       "id": 8,
@@ -108,7 +108,7 @@
       "age": 3,
       "gender": "female",
       "medicalInfo": "ADHD",
-      "SEN": "yes"
+      "SEN": "Yes"
     },
     {
       "id": 9,
@@ -118,8 +118,8 @@
       "city": "Liverpool",
       "age": 7,
       "gender": "male",
-      "medicalInfo": "none",
-      "SEN": "no"
+      "medicalInfo": "None",
+      "SEN": "No"
     },
     {
       "id": 10,
@@ -129,8 +129,8 @@
       "city": "Liverpool",
       "age": 6,
       "gender": "male",
-      "medicalInfo": "none",
-      "SEN": "no"
+      "medicalInfo": "None",
+      "SEN": "No"
     }
   ]
 }

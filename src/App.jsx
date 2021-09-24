@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
+import { Route, Switch } from "react-router-dom";
 import ApplicantsList from "./Components/ApplicantsList";
 import CreateApplicationForm from "./Components/CreateApplicationForm";
 import EditContactForm from "./Components/EditContactForm";
 import LeftAside from "./Components/LeftAside";
+import ViewChildDetails from "./Components/ViewChildDetails";
 import "./index.css";
 
 export default function App() {
 const [kids, setKids] = useState([])
 const [contacts, setContacts] = useState([])
-const [forms, setForms] = useState([])
+// const [forms, setForms] = useState([])
 const [hideForm, setHideForm] = useState(true);
 const [editContactForm, setEditContactForm] = useState(true)
 const [contactEdit, setContactEdit] = useState([])
 
-  console.log("Inside State; ", {kids, contacts, forms, hideForm, contactEdit, editContactForm})
+  console.log("Inside State; ", {kids, contacts, hideForm, contactEdit, editContactForm})
 
   useEffect(() => {
     const url = "http://localhost:3030/contacts";
@@ -58,9 +60,13 @@ const [contactEdit, setContactEdit] = useState([])
       editContactForm={editContactForm}
       setEditContactForm={setEditContactForm}
       setContactEdit={setContactEdit}
-
   />
       </div>
+      {/* <Switch>
+        <Route exact path="/ViewChildDetails">
+<ViewChildDetails lids={kids}/>
+        </Route>
+      </Switch> */}
     </> 
   );
 }

@@ -12,13 +12,14 @@ function ApplicantsList(props) {
       </header>
       <ul>
           {contacts.map((contact, index) => {
-              const {firstName, lastName, email, houseNumber, street, city, postCode, phoneNumber, dob, status, bio, dbs, radioBarred, 
+              const {firstName, lastName, gender, email, houseNumber, street, city, postCode, phoneNumber, dob, status, bio, dbs, radioBarred, 
                 radioConvict, radioDvla, radioDrivingPoints} = contact
               return(
                   <li key={index} className="child-list-border">
                       <h3>First Name: {firstName}</h3>
                       <p>Last Name: {lastName}</p>
                       <p>Email: {email}</p>
+                      <p>Gender: {gender}</p>
                       <p>House Number: {houseNumber}</p>
                       <p>Street: {street}</p>
                       <p>City: {city}</p>
@@ -34,10 +35,10 @@ function ApplicantsList(props) {
                       <p>Driving Penalty: {radioDrivingPoints}</p>
 
                       <button onClick = {() => {setEditContactForm(!editContactForm)
-                         setContactEdit(contact)}} class="delete-btn">
+                         setContactEdit(contact)}} className="delete-btn">
                             {editContactForm ? "Edit" : "cancel"}
                       </button>
-      <button class="delete-btn" onClick={handleDelete}>Delete</button>
+      <button className="delete-btn" onClick={handleDelete}>Delete</button>
                   </li>
               )
           })}
