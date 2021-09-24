@@ -125,7 +125,7 @@ select {
   background-color: rgb(130, 175, 85);
   margin-top: 12px;
   border-radius: 6px;
-  color: yellow;
+  color: rgb(236, 236, 73);
 }
 .form-stack > * + * {
   margin-top: 0.5rem;
@@ -171,6 +171,7 @@ select {
   border-radius: 6px;
   color: yellow;
 }
+
 .delete-btn {
   margin-top: 16px;
   width: auto;

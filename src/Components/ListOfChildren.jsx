@@ -1,5 +1,4 @@
-import {useHistory, useParams} from "react-router-dom";
-import ViewChildDetails from "./ViewChildDetails";
+import {Link, useHistory, useParams} from "react-router-dom";
 
 export default function ListOfChildren(props) {
   const { kids} = props
@@ -28,7 +27,12 @@ export default function ListOfChildren(props) {
           <p>City: {city}</p>
           <p> Medical Info: {medicalInfo}</p>
           <div className="list-of-child">
-            <button onClick={() => history.push("/ViewChildDetails")}>View Child Details</button>
+            <button>
+              <Link to="./ViewChildDetails">View Child Details</Link>
+              </button>
+            <button>
+              <Link to="/">Back</Link>
+            </button>
           </div>
       </li>
           )
