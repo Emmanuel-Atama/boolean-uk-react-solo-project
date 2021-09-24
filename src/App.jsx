@@ -50,11 +50,11 @@ const [contactEdit, setContactEdit] = useState([])
     <div className="three-column-grid-expand-center">
     <LeftAside  kids={kids} hideForm={hideForm} setHideForm={setHideForm}/>
     <main className="center">
-    {/* <Switch>
+    <Switch>
         <Route exact path="/ViewChildDetails">
 <ViewChildDetails kids={kids}/>
         </Route>
-      </Switch> */}
+      </Switch>
       {!hideForm && (<CreateApplicationForm contacts={contacts} setContacts={setContacts} />)}
       {!editContactForm && (<EditContactForm contacts={contacts} setContacts={setContacts} contactEdit={contactEdit}/>)}
     </main>

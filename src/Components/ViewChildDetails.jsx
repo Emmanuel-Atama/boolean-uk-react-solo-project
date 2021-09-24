@@ -2,13 +2,13 @@ export default function ViewChildDetails(props) {
     const { kids} = props
 
 return (
-  <ul>
+  <ul className="child-lists">
   {kids.map((kid, index) => {
 
     const {firstName, lastName, city, gender, medicalInfo, age, postCode, SEN} = kid
 // console.log("Inside Kids Map: ", kid)
 return (
-<li key={index} className="child-center">
+<li key={index} className="child-list child-list--text">
       <h3>First Name: {firstName}</h3>
       <p>Last Name: {lastName}</p>
       <p>Gender: {gender}</p>

@@ -1,26 +1,5 @@
 {
-  "contacts": [
-    {
-      "firstName": "Emma",
-      "lastName": "Atama",
-      "gender": "Female",
-      "email": "eat@g.com",
-      "houseNumber": "1",
-      "street": "Tipton",
-      "city": "Sandwel",
-      "postCode": "DY12TR",
-      "phoneNumber": "+794456677655",
-      "dob": "1987-11-28",
-      "status": "married",
-      "bio": "Nice and caring individual...",
-      "dbs": "41567789986",
-      "radioBarred": true,
-      "radioConvict": true,
-      "radioDvla": true,
-      "radioDrivingPoints": true,
-      "id": 2
-    }
-  ],
+  "contacts": [],
   "children": [
     {
       "id": 1,

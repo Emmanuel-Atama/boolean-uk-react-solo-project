@@ -174,7 +174,7 @@ const handleSubmit = (event) => {
         type="tel"
         id="phone"
         name="phone"
-        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
         // required
       />
       <small> Format: 0123-456-7890</small>

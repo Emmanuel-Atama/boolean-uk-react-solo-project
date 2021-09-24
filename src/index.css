@@ -194,3 +194,32 @@ select {
   padding-left: 16px;
   padding-right: 16px;
 }
+.child-lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 450px);
+  gap: 15px;
+  justify-content: center;
+  justify-items: center;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.child-list {
+  width: 100%;
+  justify-self: center;
+  border: 1px solid #c9c4c4;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 300ms;
+  padding: 8px;
+}
+
+.child-list:hover {
+  transform: scale(1.02);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.child-list--text {
+  margin: 0.2rem;
+  padding: 1rem;
+  border-radius: 5px;
+}

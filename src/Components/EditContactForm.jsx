@@ -148,7 +148,7 @@ const url = `http://localhost:3030/contacts/${contactEdit.id}`;
     return (
       <>
       <h2>Edit Application</h2>
-        <form onSubmit={handleSubmit} className="form-stack light-shadow center contact-form">
+        <form onSubmit={handleSubmit} className="form-stack light-shadow center">
 
         <label htmlFor="first-name-input">First Name:</label>
         <input
@@ -222,7 +222,7 @@ const url = `http://localhost:3030/contacts/${contactEdit.id}`;
           type="tel"
           id="phone"
           name="phone"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          // pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           // required
         />
         <small> Format: 123-456-7890</small>
