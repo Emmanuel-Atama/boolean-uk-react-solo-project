@@ -137,13 +137,8 @@ const url = `http://localhost:3030/contacts/${contactEdit.id}`;
       console.log("Inside delUrl: ", delUrl)
 
       fetch(delUrl, fetchContactToDelete)
-      // .then()
-      // .then((res) =>res.json())
-      // .then((deletedContact) => {
-
-      //   setContacts(deletedContact)
-      // })
-
+      // .then((res) => res.json())
+      // .then((res) => console.log(res));
       }
     return (
       <>

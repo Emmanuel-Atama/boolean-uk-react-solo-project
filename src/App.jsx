@@ -47,6 +47,7 @@ const [contactEdit, setContactEdit] = useState([])
     <h1>ANEMS FOSTER SERVICES</h1>
     <h3><i>...There is a home for every child...</i></h3>
     </header>
+  
     <div className="three-column-grid-expand-center">
     <LeftAside  kids={kids} hideForm={hideForm} setHideForm={setHideForm}/>
     <main className="center">
@@ -67,11 +68,6 @@ const [contactEdit, setContactEdit] = useState([])
       setContactEdit={setContactEdit}
   />
       </div>
-      {/* <Switch>
-        <Route exact path="/ViewChildDetails">
-<ViewChildDetails kids={kids}/>
-        </Route>
-      </Switch> */}
     </> 
   );
 }
