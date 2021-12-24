@@ -40,4 +40,3 @@ export default function ListOfChildren(props) {
     </ul>
     );
   }
-  
