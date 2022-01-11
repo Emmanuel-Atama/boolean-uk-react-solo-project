@@ -1,9 +1,9 @@
-import {Link, useHistory, useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 export default function ListOfChildren(props) {
   const { kids} = props
 
-  const history = useHistory()
+  // const history = useHistory()
 
   const {kidGender} = useParams()
 

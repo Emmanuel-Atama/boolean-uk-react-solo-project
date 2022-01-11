@@ -10,36 +10,37 @@ import "./index.css";
 export default function App() {
 const [kids, setKids] = useState([])
 const [contacts, setContacts] = useState([])
-// const [forms, setForms] = useState([])
 const [hideForm, setHideForm] = useState(true);
 const [editContactForm, setEditContactForm] = useState(true)
 const [contactEdit, setContactEdit] = useState([])
 
   console.log("Inside State; ", {kids, contacts, hideForm, contactEdit, editContactForm})
 
-  useEffect(() => {
+  function fetchContacts() {
     const url = "http://localhost:3030/contacts";
-
     fetch(url)
       .then((res) => res.json())
       .then((contactData) => {
         // console.log("Inside Get Fetch: ", contactData);
-
         setContacts(contactData);
-      });
-  }, []);
+      })
+  }
 
-  useEffect(() => {
+  function fetchChildren() {
     const url = "http://localhost:3030/children";
-
     fetch(url)
       .then((res) => res.json())
-      .then((kidsData) => {
-        // console.log("Inside Get Fetch: ", kidsData);
+      .then((childData) => {
+        // console.log("Inside Get Fetch: ", childData);
+        setKids(childData);
+      })
+  }
 
-        setKids(kidsData);
-      });
-  }, []);
+useEffect(() => {
+  fetchChildren()
+  fetchContacts()
+}, [])
+
 
   return (
     <>
@@ -71,4 +72,3 @@ const [contactEdit, setContactEdit] = useState([])
     </> 
   );
 }
-
